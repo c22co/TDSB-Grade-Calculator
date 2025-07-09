@@ -9,18 +9,34 @@
   }
 }
 
+h1 {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 2em;
+}
+
 .row-sections {
   display: flex;
-  gap: 10px; /* space between the two sections */
+  flex-wrap: wrap;
+  gap: 30px;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.moveA {
-  margin-left: 0; /* Remove large left margin if present */
+.moveKU,
+.moveA,
+.moveC,
+.moveTI {
+  flex: 1;
+  min-width: 280px; /* prevents them from being too narrow on small screens */
 }
 
-.moveC {
-  margin-left: 0; /* Remove large left margin if present */
+.exam {
+    margin-top: 60px;
+}
+
+.calculate {
+  margin-top: 60px;
 }
 
 input[type="number"] {

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>TDSB Grades Calculator</h1>
+  <h1> <u> TDSB Grades Calculator </u></h1>
 
 <!-- ------------------------------------------------------------------------------------ -->
 
@@ -24,55 +24,62 @@
     <p>Average KU Score: <span id="ku-average">0</span>%</p>
   </div>
 
-  <div class="moveA">
-    <label> Application:</label>
-    <div id="a-marks-container">
-      <input type="number" class="a-mark" placeholder="e.g. 73">
+  <!-- ------------------------------------------------------------------------------------ -->
+
+    <div class="moveA">
+      <label> Application:</label>
+      <div id="a-marks-container">
+        <input type="number" class="a-mark" placeholder="e.g. 73">
+      </div>
+      <button type="button" onclick="addAMark()">Add Application Mark</button>
+      <br>
+      Weight %: <input type="number" id="AWeight" placeholder="e.g. 25">
+      <p>Average Application Score: <span id="a-average">0</span>%</p>
     </div>
-    <button type="button" onclick="addAMark()">Add Application Mark</button>
-    <br>
-    Weight %: <input type="number" id="AWeight" placeholder="e.g. 25">
-    <p>Average Application Score: <span id="a-average">0</span>%</p>
-  </div>
-</div>
 
 <!-- ------------------------------------------------------------------------------------ -->
 
-  <div class="moveC">
-    <label> Communication </label>
-    <div id="c-marks-container">
-      <input type="number" class="c-mark" placeholder="e.g. 98">
+    <div class="moveC">
+      <label> Communication </label>
+      <div id="c-marks-container">
+        <input type="number" class="c-mark" placeholder="e.g. 98">
+      </div>
+
+      <button type="button" onclick="addCMark()">Add Communication Mark</button>
+      <br>
+      Weight %: <input type="number" id="CWeight" placeholder="e.g. 10">
+      <p>Average Communications Score: <span id="c-average">0</span>%</p>
     </div>
 
-    <button type="button" onclick="addCMark()">Add Communication Mark</button>
+  <!-- ------------------------------------------------------------------------------------ -->
+
+    <div class="moveTI">
+    <label> Thinking and Inquiry </label>
+    <div id="ti-marks-container">
+      <input type="number" class="ti-mark" placeholder="e.g. 54">
+    </div>
+
+    <button type="button" onclick="addTIMark()">Add Thinking and Inquiry Mark</button>
     <br>
-    Weight %: <input type="number" id="CWeight" placeholder="e.g. 10">
-    <p>Average Communications Score: <span id="c-average">0</span>%</p>
-  </div>
+    Weight %: <input type="number" id="TIWeight" placeholder="e.g. 10">
+    <p>Average Thinking and Inquiry Score: <span id="ti-average">0</span>%</p>
+    </div>
+</div>
 
   <!-- ------------------------------------------------------------------------------------ -->
 
-  <div class="moveTI">
-  <label> Thinking and Inquiry </label>
-  <div id="ti-marks-container">
-    <input type="number" class="ti-mark" placeholder="e.g. 54">
+  <div class="exam">
+    <label> Final Exam Score (30% of course):
+        <input type="number" id="finalExam" placeholder="0-100"></label>
   </div>
 
-  <button type="button" onclick="addTIMark()">Add Thinking and Inquiry Mark</button>
-  <br>
-  Weight %: <input type="number" id="TIWeight" placeholder="e.g. 10">
-  <p>Average Thinking and Inquiry Score: <span id="ti-average">0</span>%</p>
+  <div class="calculate">
+      <br>
+      <button onclick="calculate()">Calculate Final Score</button>
+  
+
+    <div id="result"></div>
   </div>
-
-  <!-- ------------------------------------------------------------------------------------ -->
-
-  <label> Final Exam Score (30% of course):
-      <input type="number" id="finalExam" placeholder="0-100"></label>
-
-  <br>
-  <button onclick="calculate()">Calculate Final Score</button>
-
-  <div id="result"></div>
 
   <script>
 
