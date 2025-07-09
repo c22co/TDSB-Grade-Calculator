@@ -1,0 +1,53 @@
+@media (max-width: 600px) {
+  .row-sections {
+    flex-direction: column;
+    gap: 16px;
+  }
+  button, input[type="number"] {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.row-sections {
+  display: flex;
+  gap: 10px; /* space between the two sections */
+  align-items: flex-start;
+}
+
+.moveA {
+  margin-left: 0; /* Remove large left margin if present */
+}
+
+.moveC {
+  margin-left: 0; /* Remove large left margin if present */
+}
+
+input[type="number"] {
+  width: 90%;
+  max-width: 200px;
+  margin-bottom: 5px;
+  font-size: 1em;
+  padding: 5px;
+}
+
+button {
+  width: 100%;
+  max-width: 250px;
+  margin: 8px 0;
+  font-size: 1em;
+  padding: 8px;
+}
+
+label, p {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.2em;
+  word-break: break-word;
+}
+

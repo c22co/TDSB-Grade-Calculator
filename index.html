@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDSB Grades Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>TDSB Grades Calculator</h1>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+<div class="row-sections">
+  <div class="moveKU">
+    <label> Knowledge and Understanding:</label>
+    <div id="ku-marks-container">
+      <input type="number" class="ku-mark" placeholder="e.g. 85">
+    </div>
+    <button type="button" onclick="addKUMark()">Add Knowledge and Understanding Mark</button>
+    <br>
+    Weight %: <input type="number" id="KUWeight" placeholder="e.g. 25">
+    <p>Average KU Score: <span id="ku-average">0</span>%</p>
+  </div>
+
+  <div class="moveA">
+    <label> Application:</label>
+    <div id="a-marks-container">
+      <input type="number" class="a-mark" placeholder="e.g. 73">
+    </div>
+    <button type="button" onclick="addAMark()">Add Application Mark</button>
+    <br>
+    Weight %: <input type="number" id="AWeight" placeholder="e.g. 25">
+    <p>Average Application Score: <span id="a-average">0</span>%</p>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+  <div class="moveC">
+    <label> Communication </label>
+    <div id="c-marks-container">
+      <input type="number" class="c-mark" placeholder="e.g. 98">
+    </div>
+
+    <button type="button" onclick="addCMark()">Add Communication Mark</button>
+    <br>
+    Weight %: <input type="number" id="CWeight" placeholder="e.g. 10">
+    <p>Average Communications Score: <span id="c-average">0</span>%</p>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------ -->
+
+  <div class="moveTI">
+  <label> Thinking and Inquiry </label>
+  <div id="ti-marks-container">
+    <input type="number" class="ti-mark" placeholder="e.g. 54">
+  </div>
+
+  <button type="button" onclick="addTIMark()">Add Thinking and Inquiry Mark</button>
+  <br>
+  Weight %: <input type="number" id="TIWeight" placeholder="e.g. 10">
+  <p>Average Thinking and Inquiry Score: <span id="ti-average">0</span>%</p>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------ -->
+
+  <label> Final Exam Score (30% of course):
+      <input type="number" id="finalExam" placeholder="0-100"></label>
+
+  <br>
+  <button onclick="calculate()">Calculate Final Score</button>
+
+  <div id="result"></div>
+
+  <script>
+
+      function addKUMark() {
+        const container = document.getElementById("ku-marks-container");
+        const input = document.createElement("input");
+        input.type = "number";
+        input.className = "ku-mark";
+        input.placeholder = "e.g. 85";
+        container.appendChild(document.createElement("br"));
+        container.appendChild(input);
+      }
+
+      function getKUAverage() {
+        const inputs = document.querySelectorAll(".ku-mark");
+        let total = 0;
+        let count = 0;
+
+        inputs.forEach(input => {
+          const val = parseFloat(input.value);
+          if (!isNaN(val)) {
+            total += val;
+            count++;
+          }
+        });
+
+        return count > 0 ? total / count : 0;
+      }
+
+     // -------------------------------------------------------
+
+      function addAMark() {
+        const container = document.getElementById("a-marks-container");
+        const input = document.createElement("input");
+        input.type = "number";
+        input.className = "a-mark";
+        input.placeholder = "e.g. 85";
+        container.appendChild(document.createElement("br"));
+        container.appendChild(input);
+      }
+
+      function getaAvg() {
+        const inputs = document.querySelectorAll(".a-mark");
+        let total = 0;
+        let count = 0;
+
+        inputs.forEach(input => {
+          const val = parseFloat(input.value);
+          if (!isNaN(val)) {
+            total += val;
+            count++;
+          }
+        });
+
+        return count > 0 ? total / count : 0;
+      }
+
+    // -------------------------------------------------------
+
+      function addCMark() {
+        const container = document.getElementById("c-marks-container");
+        const input = document.createElement("input");
+        input.type = "number";
+        input.className = "c-mark";
+        input.placeholder = "e.g. 10";
+        container.appendChild(document.createElement("br"));
+        container.appendChild(input);
+      }
+
+      function getcAvg() {
+        const inputs = document.querySelectorAll(".c-mark");
+        let total = 0;
+        let count = 0;
+
+        inputs.forEach(input => {
+          const val = parseFloat(input.value);
+          if (!isNaN(val)) {
+            total += val;
+            count++;
+          }
+        });
+
+        return count > 0 ? total / count : 0;
+      }
+
+      // -------------------------------------------------------
+
+      function addTIMark() {
+        const container = document.getElementById("ti-marks-container");
+        const input = document.createElement("input");
+        input.type = "number";
+        input.className = "ti-mark";
+        input.placeholder = "e.g. 10";
+        container.appendChild(document.createElement("br"));
+        container.appendChild(input);
+      }
+
+      function getTIAvg() {
+        const inputs = document.querySelectorAll(".ti-mark");
+        let total = 0;
+        let count = 0;
+
+        inputs.forEach(input => {
+          const val = parseFloat(input.value);
+          if (!isNaN(val)) {
+            total += val;
+            count++;
+          }
+        });
+
+        return count > 0 ? total / count : 0;
+      }
+
+  // --------------------------------------------------------------
+
+  function calculate() {
+    // Get KU average
+    let kuAvg = getKUAverage();
+    document.getElementById("ku-average").innerText = kuAvg.toFixed(2);
+
+    // Get Application average
+    let aAvg = getaAvg();
+    document.getElementById("a-average").innerText = aAvg.toFixed(2);
+
+    // Get Communication average
+    let cAvg = getcAvg();
+    document.getElementById("c-average").innerText = cAvg.toFixed(2);
+
+    // Get Thinking and Inquiry average
+    let tiAvg = getTIAvg();
+    document.getElementById("ti-average").innerText = tiAvg.toFixed(2);
+
+    // Get other scores
+    let exam = parseFloat(document.getElementById("finalExam").value) || 0;
+
+    // Get weights
+    let kuWeight = parseFloat(document.getElementById("KUWeight").value) || 0;
+    let aWeight = parseFloat(document.getElementById("AWeight").value) || 0;
+    let cWeight = parseFloat(document.getElementById("CWeight").value) || 0;
+    let tiWeight = parseFloat(document.getElementById("TIWeight").value) || 0;
+
+    let totalWeight = kuWeight + aWeight + cWeight + tiWeight;
+
+    if (totalWeight !== 70) {
+      document.getElementById("result").innerHTML =
+        `<span style="color:red;">Error: Total weights must add up to 70% (currently ${totalWeight}%)</span>`;
+      return;
+    }
+
+    // Calculate weighted coursework average
+    let weightedAverage =
+      (kuAvg * kuWeight +
+       aAvg * aWeight +
+       cAvg * cWeight +
+       tiAvg * tiWeight) / 70;
+
+    // Final score = 70% coursework + 30% exam
+    let finalCourseScore = weightedAverage * 0.70 + exam * 0.30;
+
+    // Display result
+    document.getElementById("result").innerHTML =
+      `Coursework Avg: ${weightedAverage.toFixed(2)}%<br>` +
+      `Final Exam: ${exam.toFixed(2)}%<br>` +
+      `<strong> Final Grade: ${finalCourseScore.toFixed(2)}%</strong>`;
+  }
+
+    </script>
+  </body>
+</html>
