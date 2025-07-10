@@ -36,6 +36,80 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
+  h2 {
+      text-align: left;
+      font-size: 2.5rem;
+      margin: 2rem 0;
+      color: #fff;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 0.2s;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 0 1rem;
+    }
+
+  .MePhoto {
+      position: static;      /* Removes absolute positioning */
+      display: block;        /* Allows margin auto to center */
+      margin: 2rem auto 1rem auto; /* Centers image with spacing */
+      max-width: 90vw;       /* Responsive width */
+      width: 100%;
+      right: auto;
+      top: auto;
+    }
+
+    .nav-menu {
+        position: static;
+        margin: 1rem 0 0 0;
+        text-align: center;
+      }
+      .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .p1 {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 0 0.5rem; /* Less padding on mobile */
+        margin: 1rem 0; /* Adjusted margin for mobile */
+      }
+
+      .p2 {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 0 0.5rem; /* Less padding on mobile */
+        margin: 1rem 0; /* Adjusted margin for mobile */
+      }
+
+      .MePhoto {
+        position: static;      /* Removes absolute positioning */
+        display: block;        /* Allows margin auto to center */
+        margin: 2rem auto 1rem auto; /* Centers image with spacing */
+        max-width: 90vw;       /* Responsive width */
+        width: 100%;
+        right: auto;
+        top: auto;
+      }
+
+    .container {
+        position: static; /* so it flows naturally on small screens */
+        margin: 20px auto; /* center container horizontally with some vertical spacing */
+        display: flex;
+        justify-content: center; /* center icons */
+        gap: 15px; /* smaller gap on mobile */
+        transform: none; /* reset transform */
+        top: auto; /* reset absolute positioning */
+        left: auto; /* reset absolute positioning */
+        width: 100%; /* take full width */
+      }
+
+    .instagram a,
+    .linkedin a {
+        font-size: 32px; /* slightly smaller icons */
+        width: 50px;
+        height: 50px;
+      }
 }
 
 @keyframes fadeIn {
@@ -52,14 +126,14 @@
 
 body {
   margin: 0;
-  background-color: #303652;
+  background-color: #606a93;
   padding: 0;
   font-family: JetBrains Mono, monospace; 
   line-height: 1.6;
 }
 
 #box1 {
-  background-color: #626b97;
+  background: linear-gradient(to bottom, #363b51, #4a517a);
   width: 100%;
   height: 80px;
   margin-top: 0;
@@ -87,6 +161,8 @@ h1 {
   opacity: 0;
   padding: 20px;
   min-width:260px;
+
+  padding-top: 50px; /* You can also use padding instead of margin */
 }
 
 .moveKU,
@@ -108,6 +184,16 @@ h1 {
   overflow-wrap: break-word;
   padding: 10px 12px;
   margin: 0 auto; /* centers the box */
+
+  background: linear-gradient(135deg, #2e2e4d, #3b4264);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moveKU:hover, .moveA:hover, .moveC:hover, .moveTI:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
 .exam {
@@ -123,6 +209,7 @@ h1 {
 .calculate {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 input[type="number"] {
@@ -156,5 +243,155 @@ button {
   opacity: 0;
 }
 
+.nav-menu {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index:1000;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #3b4264;
+}
+
+.p1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  color: #ffffff;
+  max-width: 650px;         /* Keeps it from being too wide on desktop */
+  width: 100%;              /* Uses all available width on small screens */
+  line-height: 1.5;         /* Good readability */
+  margin: 2rem 0rem auto; /* Centers on desktop, adds spacing */
+  text-align: left;
+  padding: 0 1rem;          /* Padding for phone screens */
+  box-sizing: border-box;
+  display: block;
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.p2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  color: #ffffff;
+  max-width: 650px;         /* Keeps it from being too wide on desktop */
+  width: 100%;              /* Uses all available width on small screens */
+  line-height: 1.5;         /* Good readability */
+  margin: 2rem 0rem auto; /* Centers on desktop, adds spacing */
+  text-align: left;
+  padding: 0 1rem;          /* Padding for phone screens */
+  box-sizing: border-box;
+  display: block;
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.p3 {
+  max-width: 800px;
+  text-align: center;
+}
+
+.MePhoto {
+  position: absolute;      /* Place image relative to the nearest positioned ancestor */
+  top: 3rem;               /* Distance from the top of the page */
+  right: 3rem;             /* Distance from the right of the page */
+  max-width: 600px;        /* Adjust size as needed */
+  width: 100%;
+  height: auto;    /* Softer corners */
+  margin: 0;               /* Remove extra margin */
+  transition: transform 0.3s ease, opacity 1s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+h2 {
+      text-align: left;
+      font-size: 2.5rem;
+      margin: 2rem 0;
+      color: #fff;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 0.2s;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 0 1rem;
+    }
+
+.BackHome {
+    position: fixed;
+    bottom: 150px;
+    left: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, opacity 1s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.4s;
+  }
+
+.BackHome:hover {
+  background-color: #99a2cd;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.container {
+  position: absolute;
+  top: 450px;
+  left: 48%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
 
+.instagram a,
+.linkedin a {
+  color: #fff;
+  font-size: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* remove margin-left and margin-top here */
+}
+
+.instagram a i,
+.linkedin a i {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: middle;
+}

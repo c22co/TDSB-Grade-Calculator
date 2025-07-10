@@ -10,6 +10,13 @@
 
   <div id="box1"> <h1> TDSB Grades Calculator</h1> </div> 
 
+   <nav class="nav-menu">
+
+  <ul>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  </nav>
+
 <!-- ------------------------------------------------------------------------------------ -->
 
 <div class="row-sections">
@@ -196,55 +203,64 @@
   // --------------------------------------------------------------
 
   function calculate() {
-    // Get KU average
-    let kuAvg = getKUAverage();
-    document.getElementById("ku-average").innerText = kuAvg.toFixed(2);
+  // Get KU average
+  let kuAvg = getKUAverage();
+  document.getElementById("ku-average").innerText = kuAvg.toFixed(2);
 
-    // Get Application average
-    let aAvg = getaAvg();
-    document.getElementById("a-average").innerText = aAvg.toFixed(2);
+  // Get Application average
+  let aAvg = getaAvg();
+  document.getElementById("a-average").innerText = aAvg.toFixed(2);
 
-    // Get Communication average
-    let cAvg = getcAvg();
-    document.getElementById("c-average").innerText = cAvg.toFixed(2);
+  // Get Communication average
+  let cAvg = getcAvg();
+  document.getElementById("c-average").innerText = cAvg.toFixed(2);
 
-    // Get Thinking and Inquiry average
-    let tiAvg = getTIAvg();
-    document.getElementById("ti-average").innerText = tiAvg.toFixed(2);
+  // Get Thinking and Inquiry average
+  let tiAvg = getTIAvg();
+  document.getElementById("ti-average").innerText = tiAvg.toFixed(2);
 
-    // Get other scores
-    let exam = parseFloat(document.getElementById("finalExam").value) || 0;
+  // Get weights
+  let kuWeight = parseFloat(document.getElementById("KUWeight").value) || 0;
+  let aWeight = parseFloat(document.getElementById("AWeight").value) || 0;
+  let cWeight = parseFloat(document.getElementById("CWeight").value) || 0;
+  let tiWeight = parseFloat(document.getElementById("TIWeight").value) || 0;
 
-    // Get weights
-    let kuWeight = parseFloat(document.getElementById("KUWeight").value) || 0;
-    let aWeight = parseFloat(document.getElementById("AWeight").value) || 0;
-    let cWeight = parseFloat(document.getElementById("CWeight").value) || 0;
-    let tiWeight = parseFloat(document.getElementById("TIWeight").value) || 0;
+  let totalWeight = kuWeight + aWeight + cWeight + tiWeight;
 
-    let totalWeight = kuWeight + aWeight + cWeight + tiWeight;
+  if (totalWeight !== 70) {
+    document.getElementById("result").innerHTML =
+      `<span style="color:red; display:block; margin-top: 20px;">
+         Error: Total weights must add up to 70% (currently ${totalWeight}%)
+       </span>`;
+    return;
+  }
 
-    if (totalWeight !== 70) {
-      document.getElementById("result").innerHTML =
-        `<span style="color:red;">Error: Total weights must add up to 70% (currently ${totalWeight}%)</span>`;
-      return;
-    }
+  // Calculate weighted coursework average
+  let weightedAverage =
+    (kuAvg * kuWeight +
+     aAvg * aWeight +
+     cAvg * cWeight +
+     tiAvg * tiWeight) / 70;
 
-    // Calculate weighted coursework average
-    let weightedAverage =
-      (kuAvg * kuWeight +
-       aAvg * aWeight +
-       cAvg * cWeight +
-       tiAvg * tiWeight) / 70;
+  // Check if final exam score was entered
+  let examInput = document.getElementById("finalExam").value.trim();
+  if (examInput === "") {
+    document.getElementById("result").innerHTML =
+      `Coursework Avg: ${weightedAverage.toFixed(2)}%<br>` +
+      `<em>Final Exam not entered</em>`;
+  } else {
+    let exam = parseFloat(examInput);
+    if (isNaN(exam)) exam = 0;
 
     // Final score = 70% coursework + 30% exam
     let finalCourseScore = weightedAverage * 0.70 + exam * 0.30;
 
-    // Display result
     document.getElementById("result").innerHTML =
       `Coursework Avg: ${weightedAverage.toFixed(2)}%<br>` +
       `Final Exam: ${exam.toFixed(2)}%<br>` +
       `<strong> Final Grade: ${finalCourseScore.toFixed(2)}%</strong>`;
   }
+}
 
     </script>
   </body>
