@@ -91,7 +91,7 @@ h1 {
 .moveC,
 .moveTI {
   flex: 1;
-  min-width: 260px; /* prevents them from being too narrow on small screens */
+  max-width: 240px; 
   background-color: #3b4264;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -119,10 +119,6 @@ h1 {
 .calculate {
   text-align: center;
   margin-top: 10px;
-
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.3s;
-  opacity: 0;
 }
 
 input[type="number"] {
@@ -132,9 +128,6 @@ input[type="number"] {
   font-size: 1em;
   padding: 5px;
 
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.3s;
-  opacity: 0;
 }
 
 button {
