@@ -1,13 +1,41 @@
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .row-sections {
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
   }
-  button, input[type="number"] {
-    max-width: 100%;
+
+  .moveKU,
+  .moveA,
+  .moveC,
+  .moveTI {
     width: 100%;
+    min-width: auto;
+  }
+
+  input[type="number"],
+  button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .exam,
+  .calculate {
+    text-align: center;
   }
 }
+
+body {
+  padding: 16px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
 
 h1 {
   text-align: left;
@@ -16,11 +44,9 @@ h1 {
 }
 
 .row-sections {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .moveKU,
@@ -32,11 +58,13 @@ h1 {
 }
 
 .exam {
-    margin-top: 60px;
+  text-align: center;
+    margin-top: 35px;
 }
 
 .calculate {
-  margin-top: 60px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 input[type="number"] {
@@ -48,11 +76,9 @@ input[type="number"] {
 }
 
 button {
-  width: 100%;
-  max-width: 250px;
-  margin: 8px 0;
-  font-size: 1em;
-  padding: 8px;
+ padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 6px;
 }
 
 label, p {
