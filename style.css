@@ -11,10 +11,12 @@
   .moveC,
   .moveTI {
     width: 100%;
-    max-width: 240px;
+    max-width: 90vw;
+    margin: 0 auto; /* centers the box */
+
     background-color: #3b4264;
     padding: 15px;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
