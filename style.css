@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
   .row-sections {
-    display: center;
+    display: auto;
     flex-direction: column;
     gap: 20px;
     padding: 10px;
