@@ -10,7 +10,12 @@
   .moveTI {
     width: 100%;
     min-width: auto;
-  }
+
+    background-color: #3b4264;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
   input[type="number"],
   button {
@@ -30,19 +35,40 @@
   }
 }
 
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
 body {
+  margin: 0;
   background-color: #303652;
-  padding: 10px;
-  font-family: sans-serif;
+  padding: 0;
+  font-family: JetBrains Mono, monospace; 
   line-height: 1.6;
+}
+
+#box1 {
+  background-color: #99a2cd;
+  width: 100%;
+  height: 80px;
+  margin-top: 0;
 }
 
 
 h1 {
   color:#ffffff;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 0;
   font-size: 2em;
+  padding: 15px;
 }
 
 .row-sections {
@@ -50,6 +76,11 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
   color: #99a2cd;
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  padding: 20px;
 }
 
 .moveKU,
@@ -58,45 +89,60 @@ h1 {
 .moveTI {
   flex: 1;
   min-width: 280px; /* prevents them from being too narrow on small screens */
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 .exam {
   text-align: center;
     margin-top: 50px;
     color: rgb(255, 255, 255);
+
+    animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 .calculate {
   text-align: center;
   margin-top: 10px;
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 input[type="number"] {
-  width: 90%;
+  width: 100%;
   max-width: 200px;
   margin-bottom: 5px;
   font-size: 1em;
   padding: 5px;
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 button {
   padding: 12px;
   font-size: 0.8rem;
   border-radius: 6px;
-}
 
-.buttonText:hover {
-  background-color: #838cba; /* color when hovering */
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 .button:hover {
   background-color: #e7e41a; /* color when hovering */
+
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 
-#result {
-  margin-top: 20px;
-  font-size: 1.2em;
-  word-break: break-word;
-}
 
