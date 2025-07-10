@@ -11,7 +11,7 @@
   .moveC,
   .moveTI {
     width: 100%;
-    min-width: 240px;
+    max-width: 240px;
     background-color: #3b4264;
     padding: 15px;
     border-radius: 12px;
