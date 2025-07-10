@@ -78,6 +78,7 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
   color: #99a2cd;
+  justify-content: center; /* centers child items horizontally */
 
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.3s;
@@ -104,6 +105,7 @@ h1 {
   word-break: break-word;
   overflow-wrap: break-word;
   padding: 10px 12px;
+  margin: 0 auto; /* centers the box */
 }
 
 .exam {
