@@ -11,7 +11,7 @@
   .moveC,
   .moveTI {
     width: 100%;
-    min-width: auto;
+    min-width: 240px;
     background-color: #3b4264;
     padding: 15px;
     border-radius: 12px;
@@ -92,6 +92,9 @@ h1 {
 .moveTI {
   flex: 1;
   min-width: 260px; /* prevents them from being too narrow on small screens */
+  background-color: #3b4264;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.3s;
