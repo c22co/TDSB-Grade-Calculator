@@ -31,22 +31,25 @@
 }
 
 body {
-  padding: 16px;
+  background-color: #303652;
+  padding: 10px;
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 
 h1 {
+  color:#ffffff;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 2em;
 }
 
 .row-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 28px;
+  color: #99a2cd;
 }
 
 .moveKU,
@@ -59,7 +62,8 @@ h1 {
 
 .exam {
   text-align: center;
-    margin-top: 35px;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
 }
 
 .calculate {
@@ -76,16 +80,19 @@ input[type="number"] {
 }
 
 button {
- padding: 12px;
-  font-size: 1.1rem;
+  padding: 12px;
+  font-size: 0.8rem;
   border-radius: 6px;
 }
 
-label, p {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
+.buttonText:hover {
+  background-color: #838cba; /* color when hovering */
 }
+
+.button:hover {
+  background-color: #e7e41a; /* color when hovering */
+}
+
 
 #result {
   margin-top: 20px;

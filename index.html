@@ -14,11 +14,11 @@
 
 <div class="row-sections">
   <div class="moveKU">
-    <label> <b> Knowledge and Understanding: </b></label>
+    <label> <b> Knowledge and Understanding: </b> </label>
     <div id="ku-marks-container">
       <input type="number" class="ku-mark" placeholder="e.g. 85">
     </div>
-    <button type="button" onclick="addKUMark()">Add Knowledge and Understanding Mark</button>
+    <button type="button" onclick="addKUMark()" class="buttonText">Add Knowledge and Understanding Mark</button>
     <br>
     Weight %: <input type="number" id="KUWeight" placeholder="e.g. 25">
     <p>Average KU Score: <span id="ku-average">0</span>%</p>
@@ -31,7 +31,7 @@
       <div id="a-marks-container">
         <input type="number" class="a-mark" placeholder="e.g. 73">
       </div>
-      <button type="button" onclick="addAMark()">Add Application Mark</button>
+      <button type="button" onclick="addAMark()" class="buttonText">Add Application Mark</button>
       <br>
       Weight %: <input type="number" id="AWeight" placeholder="e.g. 25">
       <p>Average Application Score: <span id="a-average">0</span>%</p>
@@ -45,7 +45,7 @@
         <input type="number" class="c-mark" placeholder="e.g. 98">
       </div>
 
-      <button type="button" onclick="addCMark()">Add Communication Mark</button>
+      <button type="button" onclick="addCMark()" class="buttonText">Add Communication Mark</button>
       <br>
       Weight %: <input type="number" id="CWeight" placeholder="e.g. 10">
       <p>Average Communications Score: <span id="c-average">0</span>%</p>
@@ -59,7 +59,7 @@
       <input type="number" class="ti-mark" placeholder="e.g. 54">
     </div>
 
-    <button type="button" onclick="addTIMark()">Add Thinking and Inquiry Mark</button>
+    <button type="button" onclick="addTIMark()" class="buttonText">Add Thinking and Inquiry Mark</button>
     <br>
     Weight %: <input type="number" id="TIWeight" placeholder="e.g. 10">
     <p>Average Thinking and Inquiry Score: <span id="ti-average">0</span>%</p>
@@ -75,7 +75,7 @@
 
   <div class="calculate">
       <br>
-      <button onclick="calculate()">Calculate Final Score</button>
+      <button onclick="calculate()" class="button"> <b> Calculate Final Score </b></button>
   
 
     <div id="result"></div>
