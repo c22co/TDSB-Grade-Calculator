@@ -20,13 +20,14 @@
 
   h1 {
     font-size: 1.6em;
+    word-break: break-word;
     text-align: center;
-    padding: 10px;
   }
 
   input[type="number"],
   button {
     width: 100%;
+    max-width: 100%;
     font-size: 1rem;
   }
 }
@@ -94,6 +95,7 @@ h1 {
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
+  padding: 10px 12px;
 }
 
 .exam {
