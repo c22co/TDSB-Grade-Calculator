@@ -1,7 +1,9 @@
 @media (max-width: 768px) {
   .row-sections {
+    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
+    padding: 10px;
   }
 
   .moveKU,
@@ -10,28 +12,22 @@
   .moveTI {
     width: 100%;
     min-width: auto;
-
     background-color: #3b4264;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-  input[type="number"],
-  button {
-    width: 100%;
-    max-width: 100%;
-    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   h1 {
     font-size: 1.6em;
     text-align: center;
+    padding: 10px;
   }
 
-  .exam,
-  .calculate {
-    text-align: center;
+  input[type="number"],
+  button {
+    width: 100%;
+    font-size: 1rem;
   }
 }
 
