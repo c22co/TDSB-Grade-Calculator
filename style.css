@@ -29,6 +29,9 @@
     width: 100%;
     max-width: 100%;
     font-size: 1rem;
+    white-space: normal;  /* Allow text to wrap */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -137,6 +140,10 @@ button {
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.3s;
   opacity: 0;
+
+  white-space: normal;  /* Allow text to wrap */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .button:hover {
