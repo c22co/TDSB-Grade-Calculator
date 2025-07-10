@@ -1,6 +1,15 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
+
+  body {
+  padding: 0 10px;
+  }
+
   .row-sections {
-    display: auto;
+    display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 10px;
@@ -59,38 +68,28 @@
       top: auto;
     }
 
-    .nav-menu {
-        position: static;
-        margin: 1rem 0 0 0;
-        text-align: center;
-      }
-      .nav-menu ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
+  .nav-menu {
+      position: static;
+      margin: 1rem 0 0 0;
+      text-align: center;
+    }
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
 
-      .p1 {
-        font-size: 0.9rem; /* Smaller font size for mobile */
-        padding: 0 0.5rem; /* Less padding on mobile */
-        margin: 1rem 0; /* Adjusted margin for mobile */
-      }
+    .p1 {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+      padding: 0 0.5rem; /* Less padding on mobile */
+      margin: 1rem 0; /* Adjusted margin for mobile */
+    }
 
-      .p2 {
-        font-size: 0.9rem; /* Smaller font size for mobile */
-        padding: 0 0.5rem; /* Less padding on mobile */
-        margin: 1rem 0; /* Adjusted margin for mobile */
-      }
-
-      .MePhoto {
-        position: static;      /* Removes absolute positioning */
-        display: block;        /* Allows margin auto to center */
-        margin: 2rem auto 1rem auto; /* Centers image with spacing */
-        max-width: 90vw;       /* Responsive width */
-        width: 100%;
-        right: auto;
-        top: auto;
-      }
+    .p2 {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+      padding: 0 0.5rem; /* Less padding on mobile */
+      margin: 1rem 0; /* Adjusted margin for mobile */
+    }
 
     .container {
         position: static; /* so it flows naturally on small screens */
@@ -126,10 +125,20 @@
 
 body {
   margin: 0;
-  background-color: #606a93;
+  background-color: #04060a;
   padding: 0;
   font-family: JetBrains Mono, monospace; 
   line-height: 1.6;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #ffffff,
+      #ffffff 24px,
+      #cce0ff 25px
+    );
+  background-size: 100% 25px, 100% 25px;
+  background-repeat: repeat-y;
 }
 
 #box1 {
@@ -199,7 +208,7 @@ h1 {
 .exam {
   text-align: center;
     margin-top: 50px;
-    color: rgb(255, 255, 255);
+    color: #3b4264;
 
     animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.3s;
@@ -266,13 +275,13 @@ button {
 }
 
 .nav-menu li a:hover {
-  color: #3b4264;
+  color: #1d2132;
 }
 
 .p1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
-  color: #ffffff;
+  color: #3b4264;
   max-width: 650px;         /* Keeps it from being too wide on desktop */
   width: 100%;              /* Uses all available width on small screens */
   line-height: 1.5;         /* Good readability */
@@ -290,7 +299,7 @@ button {
 .p2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
-  color: #ffffff;
+  color: #3b4264;
   max-width: 650px;         /* Keeps it from being too wide on desktop */
   width: 100%;              /* Uses all available width on small screens */
   line-height: 1.5;         /* Good readability */
@@ -327,7 +336,7 @@ h2 {
       text-align: left;
       font-size: 2.5rem;
       margin: 2rem 0;
-      color: #fff;
+      color: #3b4264;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
       animation-delay: 0.2s;
@@ -350,6 +359,8 @@ h2 {
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
     animation-delay: 0.4s;
+
+    box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.1);
   }
 
 .BackHome:hover {
