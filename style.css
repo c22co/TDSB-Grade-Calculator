@@ -249,7 +249,10 @@ button {
 }
 
 .nav-menu {
-  right: 200px;    /* Move nav left to avoid overlap */
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 1000;
 }
 
 .nav-menu ul {
