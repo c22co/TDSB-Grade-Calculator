@@ -105,20 +105,19 @@
         animation: none;
     }
 
-    .MePhoto {
-        max-width: 300px;
-        display: block;
-    }
-
-    .BackHome {
-        text-align: center;
-        width: fit-content;
+    .MePhoto, 
+    .BackHome, 
+    .container {
+      position: static; /* Reset to normal document flow */
+      transform: none;  /* Remove transforms */
+      margin: 1rem auto; /* Add spacing */
+      width: 100%;
+      text-align: center; /* Center-align contents */
     }
 
     .container {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+      flex-direction: column; /* Stack social icons vertically if needed */
+      gap: 10px;
     }
 }
 
@@ -135,6 +134,7 @@
 
 
 body {
+  position: relative;
   margin: 0;
   background-color: #04060a;
   padding: 0;
@@ -331,16 +331,27 @@ button {
 }
 
 .MePhoto {
-  position: absolute;      /* Place image relative to the nearest positioned ancestor */
-  top: 3rem;               /* Distance from the top of the page */
-  right: 3rem;             /* Distance from the right of the page */
-  max-width: 400px;        /* Adjust size as needed */
-  width: 100%;
-  height: auto;    /* Softer corners */
-  margin: 0;               /* Remove extra margin */
-  transition: transform 0.3s ease, opacity 1s ease;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
+  position: absolute;
+  top: 90px; /* Give space below header */
+  right: 6rem;
+  max-width: 300px; /* Smaller size to avoid collisions */
+}
+
+.BackHome {
+  position: fixed; /* Ensure this isn't overridden */
+  bottom: 20px;   /* Use pixels for testing */
+  left: 20px;
+  transform: none !important; /* Disable transforms temporarily */
+}
+
+.BackHome:hover {
+  background-color: #99a2cd;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.container {
+  top: 400px; /* Adjust based on content height */
 }
 
 h2 {
@@ -355,41 +366,6 @@ h2 {
       padding: 0 1rem;
     }
 
-.BackHome {
-    position: fixed;
-    bottom: 150px;
-    left: 20px;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    transition: transform 0.3s ease, opacity 1s ease;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-    animation-delay: 0.4s;
-
-    box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.1);
-  }
-
-.BackHome:hover {
-  background-color: #99a2cd;
-  color: #ffffff;
-  transform: scale(1.05);
-}
-
-.container {
-  position: absolute;
-  top: 450px;
-  left: 48%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
 
 .instagram a,
 .linkedin a {
@@ -399,7 +375,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 1600px;
   height: 60px;
   background: transparent;
   border-radius: 50%;
